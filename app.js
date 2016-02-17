@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // example usage of trello router
 var trelloRouter = require('./lib/trello-express')({
-    boardName: "IBM Industries Design QA"  
+    boardName: "My Web Content Board"  
     // if boardName is not provided, we'll grab the first board we see
 });
 // trelloRouter is a Promise. 
