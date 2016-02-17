@@ -8,6 +8,8 @@ Clone, npm install.
 
 Customize .env file with your API keys as per Trello API docs.
 
+[Massive overview of this here](https://trello.com/c/fD8ErOzA/26-getting-a-user-token-and-oauth-urls)
+
 Check the boilerplate usage in app.js:
 
     // example usage of trello router
