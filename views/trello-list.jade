@@ -1,0 +1,20 @@
+extends layout
+
+block navigation
+  ul
+  each item in nav
+    li
+      a(href=item.url)=item.text
+
+block content
+  h1= title
+  
+  each card in content
+    .card
+      //- pre(style="display: none;")= JSON.stringify(card)
+      h2=card.name
+      h3=card.desc
+      if card.actions
+        each action in card.actions
+          if (action.type === "commentCard")
+            p=action.data.text
