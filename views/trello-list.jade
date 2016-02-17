@@ -13,7 +13,8 @@ block content
     .card
       //- pre(style="display: none;")= JSON.stringify(card)
       h2=card.name
-      h3=card.desc
+      if card.desc 
+        h3=card.desc
       if card.actions
         each action in card.actions
           if (action.type === "commentCard")
