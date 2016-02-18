@@ -34,7 +34,7 @@ var trelloRouter = require('./lib/trello-express')({
 trelloRouter.then(function(routes){
     // The router is with all lists as named / slugified routes
     // ... suitable for app.use(endpoint, routes)
-    app.use('/', routes);
+    app.use('/', routes.router);
     // best to add 404 etc handlers _AFTER_ we get the trello data :)
     addErrorHandlers();
 }).catch(function(err){
