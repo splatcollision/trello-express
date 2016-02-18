@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // example usage of trello router
 var trelloRouter = require('./lib/trello-express')({
-    boardName: "My Web Content Board"  
+    // boardName: "My Web Content Board",
     // if boardName is not provided, we'll grab the first board we see
     // .. unless we provide a public boardId
     boardId: "4d5ea62fd76aa1136000000c" // trello development board!
