@@ -2,20 +2,22 @@ extends layout
 
 block navigation
   ul
-  each item in nav
-    li
-      a(href=item.url)=item.text
+    each item in nav
+      li
+        if item.url.indexOf(path) > -1
+          span= item.text
+        else
+          a(href=item.url)=item.text
 
 block content
   h1= title
-  
   each card in content
     .card
       //- pre(style="display: none;")= JSON.stringify(card)
       h2=card.name
       if card.desc 
-        h3=card.desc
+        .desc!=card.desc
       if card.actions
         each action in card.actions
           if (action.type === "commentCard")
-            p=action.data.text
+            p.comment=action.data.text
