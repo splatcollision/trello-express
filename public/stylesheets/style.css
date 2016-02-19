@@ -1,6 +1,7 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 100%;
   background-color: #eee;
 }
 
@@ -12,6 +13,11 @@ a {
     background-color: #fff;
     margin: 2em 0;
     padding: 1em;
+    position: relative;
+}
+
+.card img {
+  max-width: 100%;
 }
 
 nav ul {
@@ -27,4 +33,54 @@ nav ul li {
 
 .comment {
     margin-left: 1em;
+}
+
+
+.labels {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.labels span {
+  width: 50px;
+  height: 2px;
+  display: inline-block;
+}
+
+
+/*.label-'green', 'yellow', 'orange', 'red', 'purple', 'blue'*/
+.label-green {
+  border-top: 2px solid green;
+}
+
+.label-yellow {
+  border-top: 2px solid yellow;
+}
+
+.label-orange {
+  border-top: 2px solid orange;
+}
+
+.label-red {
+  border-top: 2px solid red;
+}
+
+.label-purple {
+  border-top: 2px solid purple;
+}
+
+.label-blue {
+  border-top: 2px solid blue;
+}
+
+/* custom label name / color? '.label-' + name + color is your class name to target */
+
+/*// example label to class */
+.label-special1pink {
+  font-size: 2em;
+  color: white;
+  background-color: #B5B5B5;
+  margin: 0;
+  width: 50%;
 }

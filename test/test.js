@@ -8,7 +8,6 @@ var fs = require('fs');
 // ready to go jade template
 var template = jade.compile(fs.readFileSync(__dirname + '/../views/trello-list.jade'), {filename: __dirname + "/../views/trello-list.jade"});
 
-var Router = require('express').Router();
 var testBoardId = "4d5ea62fd76aa1136000000c";
 var trelloRouter = require('../lib/trello-express')({
     boardId: "4d5ea62fd76aa1136000000c" // trello development board!
@@ -80,7 +79,7 @@ describe('trello-express router tests', function(){
             assert.equal(200, this.statusCode);
             assert.include(body, "<h2>Linking to card actions or comments</h2>", "the card title was rendered on the page");
             assert.include(body, "Ever wanted to link", "the card description was rendered on the page");
-            
+                
             done();
         });
         response.on('error', done);
@@ -90,14 +89,9 @@ describe('trello-express router tests', function(){
             // done();
         });
 
-
-
-
-
-        // test.ok( response._isEndCalled());
-        // test.ok( response._isJSON());
-        // test.ok( response._isUTF8());
-
-        // test.done();
     });
+
+    // TODO add a test to fetch index page and make sure all hyperlinks exist in the nav...
+
+
 })

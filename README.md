@@ -16,6 +16,7 @@ Check the boilerplate usage in app.js:
     var trelloRouter = require('./lib/trello-express')({
         boardName: "My Web Content Board"  
         // if boardName is not provided, we'll grab the first board we see
+        // or, you can provide a boardId - either one of yours, or a public one
     });
     // trelloRouter is a Promise. 
     // When it resolves, we are returned an object with an express router and the source data from the Trello board.

@@ -4,20 +4,31 @@ block navigation
   ul
     each item in nav
       li
-        if item.url.indexOf(path) > -1
+        if item.url.indexOf(path) > -1 && path !== '/'
           span= item.text
         else
           a(href=item.url)=item.text
 
 block content
-  h1= title
-  each card in content
-    .card
-      //- pre(style="display: none;")= JSON.stringify(card)
-      h2=card.name
-      if card.desc 
-        .desc!=card.desc
-      if card.actions
-        each action in card.actions
-          if (action.type === "commentCard")
-            p.comment=action.data.text
+  section
+    h1= title
+    each card in content
+      .card(class= card.labels.join(' '))
+        if card.labels
+          .labels
+            each label in card.labels
+              span(class=label)
+        h2=card.name
+        if card.attachments
+          each attach in card.attachments
+            img(src=attach.data.attachment.url, alt=attach.data.attachment.name)
+        if card.desc 
+          .desc!=card.desc
+
+        if card.comments
+          each comment in card.comments
+            .comment!= JSON.stringify(comment)
+        //- if card.actions
+          each action in card.actions
+            if (action.type === "commentCard")
+              p.comment=action.data.text
