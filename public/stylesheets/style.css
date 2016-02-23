@@ -33,6 +33,7 @@ nav ul li {
 
 .comment {
     margin-left: 1em;
+    border-bottom: 1px solid grey;
 }
 
 

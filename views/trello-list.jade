@@ -27,7 +27,7 @@ block content
 
         if card.comments
           each comment in card.comments
-            .comment!= JSON.stringify(comment)
+            .comment!= comment
         //- if card.actions
           each action in card.actions
             if (action.type === "commentCard")
